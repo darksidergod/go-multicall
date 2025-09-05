@@ -39,13 +39,14 @@ func ParseABI(rawJson string) (*abi.ABI, error) {
 
 // Call wraps a multicall call.
 type Call struct {
-	CallName string
-	Contract *Contract
-	Method   string
-	Inputs   []any
-	Outputs  any
-	CanFail  bool
-	Failed   bool
+	CallName    string
+	Contract    *Contract
+	Method      string
+	Inputs      []any
+	Outputs     any
+	CanFail     bool
+	Failed      bool
+	UnpackError error
 }
 
 // NewCall creates a new call using given inputs.
